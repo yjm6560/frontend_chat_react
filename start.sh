@@ -4,10 +4,16 @@ set -e
 
 print_usage()
 {
-	echo "USAGE : "
+	echo "[ USAGE ]"
 	echo "./start.sh [RUN_MODE]"
 	echo "RUN_MODE = \"real\" or \"test\""
 }
+
+if [ $# -lt 1 ]
+then
+print_usage
+exit
+fi
 
 if [ $1 = "real" ]
 then
