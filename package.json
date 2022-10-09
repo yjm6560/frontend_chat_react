@@ -1,7 +1,7 @@
 {
-  "name": "noom",
+  "name": "frontend_chat_server",
   "version": "1.0.0",
-  "description": "Zoom Clone using NodeJS, WebRTC and Websockets.",
+  "description": "frontend chat service with react",
   "license": "MIT",
   "scripts": {
     "dev": "nodemon"
