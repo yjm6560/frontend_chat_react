@@ -4,7 +4,8 @@
   "description": "frontend chat service with react",
   "license": "MIT",
   "scripts": {
-    "dev": "nodemon"
+    "dev": "nodemon",
+    "start": "nodemon"
   },
   "devDependencies": {
     "@babel/cli": "^7.18.9",
