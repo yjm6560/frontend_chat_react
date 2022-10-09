@@ -1,0 +1,47 @@
+ul.chats li {
+    position: relative;
+    list-style-type: none;
+    width: max-content;
+    max-width: 45%;
+    height: auto;
+    padding: 10px;
+    border-radius: 8px;
+    background-color: #3b82f6;
+    color: #ffff;
+    text-overflow:clip;
+    line-height: 150%;
+}
+ul.chats li.sentMessage {
+    margin: 0 20px 10px auto;
+}
+ul.chats li.receivedMessage {
+    margin: 0 auto 10px 20px;
+}
+ul.chats li.sentMessage::after {
+    content: "";
+    position: absolute;
+    top: 10px;
+    right: -10px;
+    width: 0;
+    height: 0;
+    border-bottom: 16px solid transparent;
+    border-left: 16px solid #3b82f6;
+}
+ul.chats li.receivedMessage::before {
+    content: "";
+    position: absolute;
+    top: 10px;
+    left: -10px;
+    width: 0;
+    height: 0;
+    border-bottom: 16px solid transparent;
+    border-left: 16px solid #3b82f6;
+    transform: scaleX(-1);
+}
+
+@media screen and (max-width: 768px) {
+    ul.chats li {
+        margin: 0 0 10px 30%;
+        width: 65%;
+    }
+}
