@@ -1,6 +1,9 @@
 const myUuid = document.getElementById("myUuid").innerText;
 document.getElementById("myUuid").innerText = "";
-const socket = io.connect("http://localhost:3000", { query: `uuid=${myUuid}`});
+const serverUrl = document.getElementById("serverUrl").innerText;
+document.getElementById("serverUrl").innerText = "";
+
+const socket = io.connect(serverUrl, { query: `uuid=${myUuid}`});
 
 const myFace = document.getElementById("myFace");
 const muteBtn = document.getElementById("mute");

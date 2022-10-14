@@ -2,6 +2,7 @@ import http from 'http';
 import SocketIO from "socket.io";
 import express from 'express';
 import { v4 as uuidv4 } from 'uuid';
+import { serverInfo } from "./serverInfo";
 
 const app = express();
 
@@ -12,7 +13,8 @@ app.set("views", __dirname + "/views");
 app.use("/public", express.static(__dirname + "/public"));
 app.get("/", (req, res) => {
     res.render("home", {
-        uuid: uuidv4()
+        uuid: uuidv4(),
+        serverUrl: serverInfo["url"]
     });
 });
 app.get("/*", (req, res) => res.redirect("/"));
@@ -61,5 +63,5 @@ wsServer.on("connection", (socket) => {
     });
 });
 
-const handleListen = () => console.log("Listening on http://localhost:3000");
-httpServer.listen(3000, handleListen);
+const handleListen = () => console.log(`Listening on ${serverInfo["url"]}`);
+httpServer.listen(serverInfo["port"], handleListen);
