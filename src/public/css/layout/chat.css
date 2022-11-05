@@ -4,11 +4,6 @@
     margin: auto;
 }
 
-video {
-    width: 50%;
-    height: auto;
-}
-
 .chat {
     border: 1px solid #aeaeae;
     border-radius: 8px 8px 0 0;

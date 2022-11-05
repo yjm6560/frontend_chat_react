@@ -36,15 +36,6 @@ wsServer.on("connection", (socket) => {
 
         uuidInfoMap[clientUuid]["rooms"].push(roomName);
     });
-    socket.on("offer", (offer, roomName) => {
-        socket.to(roomName).emit("offer", offer);
-    });
-    socket.on("answer", (answer, roomName) => {
-        socket.to(roomName).emit("answer", answer);
-    });
-    socket.on("ice", (ice, roomName) => {
-        socket.to(roomName).emit("ice", ice);
-    });
     socket.on("new_message", (message) => {
         if(message["sender"] == clientUuid) {
             message["sent_time"] = new Date();
